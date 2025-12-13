@@ -1,0 +1,22 @@
+import { useEffect } from "react";
+import CommunityHeader from "../components/communityHeader";
+import Footer from "../components/footer";
+import Features from "../components/features";
+
+
+
+function Community() {
+    useEffect(() => {
+        document.title = 'Team';
+    }, []);
+    return (
+        <div className='flex flex-col w-full bg-[#7a1410] px-8 py-8 lg:px-14 lg:py-14'>
+            <CommunityHeader details="" title="The Team" />
+            <Features />
+            <Footer />
+        </div>
+        
+    );
+}
+
+export default Community;
