@@ -44,8 +44,8 @@ function AppContent() {
   useEffect(() => {
     const panel = ROUTE_PANELS[location.pathname]; {/* get the panel corresponding to the current URL path */}
 
-    {/* check if isDesktop is true, if panel returns a usable value, and if the current activePanel is already the same */}
-    if (isDesktop && panel && panel !== activePanel) {
+    {/* if route maps to a panel and it's different, keep state in sync regardless of viewport */}
+    if (panel && panel !== activePanel) {
       setActivePanel(panel);
     }
   }, [location.pathname, isDesktop, activePanel]); {/* dependencies; effect triggered when one or both of these values change */}
@@ -53,9 +53,9 @@ function AppContent() {
   const handlePanelClick = (id: string) => {
     setActivePanel(id);
     window.scrollTo(0, 0);
-    if (isDesktop) {
-      navigate(PANEL_ROUTES[id]); {/* changes the current URL path on desktop to corresponding panel */}
-    }
+    // Always change the URL when a panel is selected so deep-links and back/forward work
+    const route = PANEL_ROUTES[id];
+    if (route) navigate(route);
   };
 
   if (!isDesktop) {

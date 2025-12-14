@@ -9,7 +9,8 @@ function About() {
             document.title = 'About'; // Change the title for About page
         }, []);
     return (
-        <div className='flex flex-col transition-all duration-500 bg-[radial-gradient(circle_at_center,_#fdfbf7,_#d4b483)] px-8 py-8 lg:px-14 lg:py-14 min-h-screen'>
+        /* bg-[radial-gradient(circle_at_center,_#fdfbf7,_#d4b483)]*/
+        <div className='flex flex-col transition-all duration-500 w-full bg-[radial-gradient(circle_at_center,_#fdfbf7,_#d4b483)] px-8 py-8 lg:px-14 lg:py-14'>
             <Header />
             <Options />
             <AboutEvents />
