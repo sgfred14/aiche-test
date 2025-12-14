@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import About from './pages/About';
 import Community from './pages/Community';
 import Food from './pages/Events';
-import Retail from './pages/RetailMarket';
+import Retail from './pages/Insider';
 import Menu from './pages/Menu';
 
 // Import Assets

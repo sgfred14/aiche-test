@@ -1,14 +1,35 @@
-import { motion, Variants } from 'framer-motion'; 
+import React, { useState } from 'react';
+// 1. Import hooks
+import { motion, Variants, useScroll, useMotionValueEvent } from 'framer-motion'; 
 import logo from '../assets/header.png';
 import image from '../assets/black.webp';
-import sidebar from '../assets/header.png'; 
+import sidebar from '../assets/sidebarmenu.png'; 
 
 const Header = () => {
     const handleClick = (url: string) => {
         window.location.href = url;
     };
 
-    // 2. Explicitly type the variants
+    // --- Scroll Logic ---
+    const [isHidden, setIsHidden] = useState(false);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious() || 0;
+        // Hide if scrolling down and moved past 150px
+        if (latest > previous && latest > 150) {
+            setIsHidden(true);
+        } else {
+            setIsHidden(false);
+        }
+    });
+
+    // --- Navbar Variants ---
+    const navVariants: Variants = {
+        visible: { y: 0, opacity: 1 },
+        hidden: { y: "-100%", opacity: 0 },
+    };
+
     const textVariant: Variants = {
         hidden: { opacity: 0, x: -20 },
         visible: (i: number) => ({
@@ -29,10 +50,15 @@ const Header = () => {
     return (
         <div className="relative w-full min-h-screen flex flex-col overflow-hidden lg:pr-32">
             
-            {/* ... Rest of your component remains exactly the same ... */}
-            
-            {/* === 1. TOP NAVIGATION === */}
-            <div className="w-full flex justify-between items-center px-6 py-6 md:px-12 z-20">
+            {/* === 1. TOP NAVIGATION (Fixed & Animated) === */}
+            <motion.nav
+                variants={navVariants}
+                initial="visible" // Start visible
+                animate={isHidden ? "hidden" : "visible"}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                // Added: fixed, top-0, left-0, z-50. Removed: bg-white (kept transparent)
+                className="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-6 md:px-12 z-50"
+            >
                 {/* Logo */}
                 <motion.img
                     initial={{ opacity: 0, y: -20 }}
@@ -53,10 +79,11 @@ const Header = () => {
                     src={sidebar}
                     alt="Menu"
                 />
-            </div>
+            </motion.nav>
 
             {/* === 2. HERO CONTENT SECTION === */}
-            <div className="flex-grow flex flex-col lg:flex-row items-center lg:items-start justify-center px-6 md:px-12 mt-8 lg:mt-20 mb-20">
+            {/* Added pt-24 to compensate for the fixed header so content doesn't get covered initially */}
+            <div className="flex-grow flex flex-col lg:flex-row items-center lg:items-start justify-center px-6 md:px-12 mt-8 lg:mt-20 mb-20 pt-24">
                 
                 {/* LEFT COLUMN: The Typography */}
                 <div className="w-full lg:w-3/5 flex flex-col justify-center relative z-10">
@@ -122,7 +149,7 @@ const Header = () => {
                                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                                 src={image} 
                                 alt="Hero" 
-                             />
+                            />
                         </div>
 
                         {/* Caption */}

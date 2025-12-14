@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import classNames from 'classnames';
-import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview copy.png';
-import sidebar from '../assets/sidebar menu.png';
-// 1. Import Variants
-import { motion, Variants } from 'framer-motion';
+import logo from '../assets/header.png';
+import sidebar from '../assets/sidebarmenu.png';
+// 1. Updated Imports: Added useScroll, useMotionValueEvent
+import { motion, Variants, useScroll, useMotionValueEvent } from 'framer-motion';
 
 interface EventHeaderProps {
   hours: string;
@@ -18,7 +19,22 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
     window.location.href = url;
   };
 
-  // 2. Add ': Variants' type here
+  // --- NEW: Scroll Logic ---
+  const [isHidden, setIsHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() || 0;
+    
+    // logic: if scrolling down (latest > previous) and past 150px, hide.
+    // Otherwise show.
+    if (latest > previous && latest > 150) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  });
+
   const textReveal: Variants = {
     hidden: { y: "100%", opacity: 0 },
     show: { 
@@ -28,7 +44,6 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
     }
   };
 
-  // 3. Add ': Variants' type here
   const imageReveal: Variants = {
     hidden: { scale: 1.2, opacity: 0 },
     show: { 
@@ -38,15 +53,22 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
     }
   };
 
+  // --- NEW: Navbar Variants ---
+  const navbarVariants: Variants = {
+    visible: { y: 0, opacity: 1 },
+    hidden: { y: "-100%", opacity: 0 },
+  };
+
   return (
     <div className="relative min-h-screen w-full text-[#1a1a1a] overflow-hidden selection:bg-black selection:text-white">
       
-      {/* --- Floating Navbar --- */}
+      {/* --- Floating Navbar (Updated) --- */}
       <motion.nav
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className='fixed top-0 left-0 w-full px-6 py-4 z-50 flex justify-between items-center md:hidden backdrop-blur-md bg-white/70 border-b border-white/20'
+        variants={navbarVariants}
+        initial="visible"
+        animate={isHidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className='fixed top-0 left-0 w-full px-6 py-4 z-50 flex justify-between items-center md:hidden border-b border-white/20'
       >
         <div onClick={() => handleClick("/")} className='w-12 cursor-pointer hover:scale-105 transition-transform'>
           <img src={logo} alt="Logo" className="w-full h-auto object-contain" />
@@ -75,7 +97,7 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
             {[hours, schedule].map((item, i) => (
               <div key={i} className="overflow-hidden">
                 <motion.span 
-                  variants={textReveal} // Now compatible
+                  variants={textReveal} 
                   className="block text-sm font-mono uppercase tracking-widest text-gray-500"
                 >
                   {item}
@@ -91,7 +113,7 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                variants={textReveal} // Now compatible
+                variants={textReveal} 
                 className="text-6xl md:text-8xl lg:text-[9rem] font-bold leading-[0.9] tracking-tighter uppercase break-words"
               >
                 {title}
@@ -106,7 +128,7 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
              initial="hidden"
              whileInView="show"
              viewport={{ once: true }}
-             variants={imageReveal} // Now compatible
+             variants={imageReveal} 
              className="w-full h-full relative"
           >
             {/* Image Container with Hover Effect */}
@@ -116,7 +138,6 @@ const Events = ({ hours, schedule, title, image, bgHover }: EventHeaderProps) =>
                   src={image} 
                   alt={title} 
                 />
-                {/* Subtle Overlay */}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
 
