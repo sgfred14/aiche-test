@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
-// 1. Define the shape of your event object
 interface EventItem {
   id: string;
   title: string;
@@ -8,9 +8,9 @@ interface EventItem {
   color: string;
   dotColor: string;
   gradient: string;
+  colSpan?: string;
 }
 
-// Data with specific color themes
 const events: EventItem[] = [
   {
     id: 'bbc',
@@ -19,6 +19,7 @@ const events: EventItem[] = [
     color: 'text-emerald-400',
     dotColor: 'bg-emerald-400',
     gradient: 'from-emerald-500/20 to-emerald-900/5',
+    colSpan: 'md:col-span-1',
   },
   {
     id: 'ae',
@@ -27,6 +28,7 @@ const events: EventItem[] = [
     color: 'text-amber-400',
     dotColor: 'bg-amber-400',
     gradient: 'from-amber-500/20 to-amber-900/5',
+    colSpan: 'md:col-span-1',
   },
   {
     id: 'otr',
@@ -35,22 +37,25 @@ const events: EventItem[] = [
     color: 'text-cyan-400',
     dotColor: 'bg-cyan-400',
     gradient: 'from-cyan-500/20 to-cyan-900/5',
+    colSpan: 'md:col-span-1',
   },
   {
     id: 'astro',
     title: 'Astroworld',
-    description: 'Blending the mysteries of the cosmos with the thrill of hands-on exploration and decoding Morse codes.',
+    description: 'Blending the mysteries of the cosmos with the thrill of hands-on exploration and decoding Morse codes to uncover secrets hidden in the stars.',
     color: 'text-rose-400',
     dotColor: 'bg-rose-500',
     gradient: 'from-rose-500/20 to-rose-900/5',
+    colSpan: 'md:col-span-2',
   },  
   {
     id: 'yantra',
     title: 'The Elemental Fourfold Forge',
-    description: 'The Elemental Fourfold Forge was a two-day group hackathon organized by AIChE-VIT, in collaboration with VITSpartans. The event featured two structured rounds. In the first round, teams identified a real-world problem and presented the reason behind their selection.',
-    color: 'text-rose-400',
-    dotColor: 'bg-rose-500',
-    gradient: 'from-rose-500/20 to-rose-900/5',
+    description: 'The Elemental Fourfold Forge was a two-day group hackathon organized by AIChE-VIT, in collaboration with VITSpartans. The event featured two structured rounds. In the first round, teams identified a real-world problem and presented the reason behind their selection. Round 2 pushed boundaries further with prototype implementation.',
+    color: 'text-purple-400',
+    dotColor: 'bg-purple-500',
+    gradient: 'from-purple-500/20 to-purple-900/5',
+    colSpan: 'md:col-span-3',
   },
 ];
 
@@ -59,12 +64,12 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { y: 30, opacity: 0 },
+  hidden: { y: 20, opacity: 0 },
   visible: { 
     y: 0, 
     opacity: 1,
@@ -72,94 +77,99 @@ const cardVariants: Variants = {
   },
 };
 
-// 2. Define props interface for the component
 interface BentoCardProps {
   event: EventItem;
   index: number;
 }
 
-// --- Single Card Component ---
-// 3. Apply the type annotation here
 const BentoCard = ({ event, index }: BentoCardProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.div
+      layout
       variants={cardVariants}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-[#111] border border-white/5 p-8 transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-black/50"
+      onClick={() => setIsOpen(!isOpen)}
+      // Changed bg-[#111] to bg-zinc-900 so it stands out against the black page
+      className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-8 transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-black/50 cursor-pointer ${event.colSpan || 'col-span-1'}`}
     >
-      {/* 1. Dynamic Hover Gradient Background */}
       <div 
         className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`} 
       />
 
-      {/* 2. Top Row: Index & Status Dot */}
-      <div className="relative z-10 flex w-full items-start justify-between mb-6">
-        <span className="font-mono text-xs font-bold uppercase tracking-widest text-white/30 group-hover:text-white transition-colors">
+      <motion.div layout="position" className="relative z-10 flex w-full items-start justify-between mb-4">
+        <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors">
           {(index + 1).toString().padStart(2, '0')} / EVENT
         </span>
         
-        {/* Glowing Dot */}
         <span className="relative flex h-3 w-3">
           <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-0 group-hover:opacity-75 ${event.dotColor}`}></span>
           <span className={`relative inline-flex h-3 w-3 rounded-full ${event.dotColor}`}></span>
         </span>
-      </div>
+      </motion.div>
 
-      {/* 3. Content Body */}
       <div className="relative z-10">
-        <h3 className="mb-3 text-3xl font-bold leading-none tracking-tight text-white group-hover:translate-x-1 transition-transform duration-300">
+        <motion.h3 
+          layout="position"
+          className="mb-3 text-3xl font-bold leading-none tracking-tight text-white group-hover:translate-x-1 transition-transform duration-300"
+        >
           {event.title}
-        </h3>
-        <p className="text-sm leading-relaxed text-gray-400 group-hover:text-gray-200 transition-colors duration-300 line-clamp-4">
-          {event.description}
-        </p>
+        </motion.h3>
+        
+        <motion.div layout="position">
+            <p className={`text-sm leading-relaxed text-zinc-400 group-hover:text-zinc-200 transition-colors duration-300 ${isOpen ? '' : 'line-clamp-3'}`}>
+                {event.description}
+            </p>
+        </motion.div>
       </div>
 
-      {/* 4. Bottom Action Line */}
-      <div className="relative z-10 mt-8 flex items-center gap-2 overflow-hidden">
+      <motion.div layout="position" className="relative z-10 mt-8 flex items-center gap-2 overflow-hidden">
         <div className={`h-[1px] w-full bg-white/10 group-hover:bg-white/30 transition-colors`} />
-        <span className={`translate-y-10 font-mono text-xs uppercase ${event.color} transition-transform duration-300 group-hover:translate-y-0`}>
-          View
-        </span>
-      </div>
+        <motion.span 
+            key={isOpen ? "close" : "view"}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className={`font-mono text-xs uppercase ${event.color} whitespace-nowrap`}
+        >
+          
+        </motion.span>
+      </motion.div>
     </motion.div>
   );
 };
 
-// --- Main Gallery ---
 const GravitasEventsGallery = () => {
   return (
-    <section className="min-h-screen w-full px-6 py-24 selection:bg-black selection:text-white">
+    // Ensure min-h-screen and a visible background color
+    <section className="min-h-screen w-full bg-== px-6 py-24 selection:bg-white selection:text-black">
       <div className="mx-auto max-w-7xl">
         
-        {/* Header Section */}
-        <div className="mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-6"
-          >
-            <div>
-              <p className="font-mono text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">
-                [ Gallery ]
-              </p>
-              <h2 className="text-6xl md:text-8xl font-black text-black uppercase tracking-tighter leading-[0.9]">
-                Highlights
-              </h2>
-            </div>
-            <p className="md:max-w-xs text-gray-600 text-sm leading-relaxed pb-2">
-              A collection of technical prowess and creative engineering from our recent flagship hackathons.
+        <motion.div
+          // CHANGED: Trigger immediately, removed 'whileInView' to prevent hidden content bugs
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
+          <div>
+            <p className="font-mono text-xs font-bold uppercase tracking-widest text-gray-900 mb-4">
+              [ Events ]
             </p>
-          </motion.div>
-        </div>
+            <h2 className="text-6xl md:text-8xl font-black text-black uppercase tracking-tighter leading-[0.9]">
+              Highlights
+            </h2>
+          </div>
+          <p className="md:max-w-xs text-black text-sm leading-relaxed pb-2">
+            A collection of technical prowess and creative engineering from our recent flagship hackathons.
+          </p>
+        </motion.div>
 
-        {/* The Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          // CHANGED: Trigger immediately instead of on scroll
+          animate="visible"
+          className="grid gap-6 grid-cols-1 md:grid-cols-3 auto-rows-fr"
         >
           {events.map((event, i) => (
             <BentoCard key={event.id} event={event} index={i} />

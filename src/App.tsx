@@ -32,7 +32,7 @@ const NAV_ITEMS = [
     label: 'Events',
     component: <Food />,
     bgColor: '#c94141',
-    activeColor: '#5ea3ec',
+    activeColor: '#c94141',
     delay: 0,
   },
   {
@@ -41,7 +41,7 @@ const NAV_ITEMS = [
     label: 'Insider',
     component: <Retail />,
     bgColor: '#91191a',
-    activeColor: '#f64444',
+    activeColor: '#91191a',
     delay: 0.3,
   },
   {
@@ -50,7 +50,7 @@ const NAV_ITEMS = [
     label: 'Board',
     component: <Community />,
     bgColor: '#7a1410',
-    activeColor: '#ffb400',
+    activeColor: '#7a1410',
     delay: 0.6,
   },
 ];

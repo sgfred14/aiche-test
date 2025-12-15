@@ -1,24 +1,33 @@
-import image3 from '../assets/black.jpeg';
-import image2 from '../assets/black.jpeg';
-import image from '../assets/black.jpeg';
-import image4 from '../assets/black.jpeg';
-
+import image3 from '../assets/board/ameya.jpg';
+import image2 from '../assets/board/ananya.jpg';
+import image from '../assets/board/shyla.jpg';
+import image4 from '../assets/board/samyak.jpg';
+import image5 from '../assets/board/kailash.jpg';
+import image6 from '../assets/board/sharma.png';
+import image7 from '../assets/board/aadya.jpg';
+import image8 from '../assets/board/abhilash.jpg';
+import image9 from '../assets/board/black.jpg';
+import image10 from '../assets/board/lakshmi.jpg';
+import image11 from '../assets/board/kavya.jpg';
+import image12 from '../assets/board/arpit.jpg';
+import image13 from '../assets/board/abhishek.jpg';
+import image14 from '../assets/board/kathakali.jpg';
 // 1. Define the data structure to keep the JSX clean
 const teamMembers = [
-  { name: "Ameya Shukla", role: "Chairperson", img: image, link: "#ameya" },
-  { name: "Ananya Lakshmi", role: "Vice Chairperson", img: image2, link: "#anany" },
-  { name: "Shyla Gupta", role: "Secretary", img: image3, link: "#csm-community/" },
-  { name: "Samayak Nitesh Chajjed", role: "Co-Secretary, Management Head", img: image4, link: "#samayak" },
-  { name: "Kailash V", role: "ChemECar, Technical Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Sharma AK", role: "ChemECube, R&D Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Aadya Saxena", role: "K12 & Outreach Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Imthiyaz Ahmed", role: "Events Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Lakshmi S", role: "Editorial Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Kaavyashree S", role: "Global Communications Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Abhilash A", role: "Podcast and Webmaster Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Arpit Wibhute", role: "Finance Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Abhishek Nair", role: "Design Head", img: image4, link: "#csm-community---izakaya/" },
-  { name: "Kathakali Mishra", role: "ESC Liaison", img: image4, link: "#csm-community---izakaya/" },
+  { name: "Ameya Shukla", role: "Chairperson", img: image3, link: "https://www.linkedin.com/in/ameya-shukla-35059927a" },
+  { name: "Ananya Lakshmi", role: "Vice Chairperson", img: image2, link: "https://www.linkedin.com/in/ananya-lakshmi-55542428b" },
+  { name: "Shyla Gupta", role: "Secretary", img: image, link: "https://www.linkedin.com/in/shyla-gupta-a16371304" },
+  { name: "Samayak Nitesh Chajjed", role: "Co-Secretary, Management Head", img: image4, link: "https://www.linkedin.com/in/samyakchhajed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  { name: "Kailash V", role: "ChemECar, Technical Head", img: image5, link: "#kailash" },
+  { name: "Sharma AK", role: "ChemECube, R&D Head", img: image6, link: "https://www.linkedin.com/in/sharma-a-k-b3597428a" },
+  { name: "Aadya Saxena", role: "K12 & Outreach Head", img: image7, link: "https://www.linkedin.com/in/aadya-saxena-750574281" },  
+  { name: "Abhilash Anilkumar", role: "Podcast and Webmaster Head", img: image8, link: "https://www.linkedin.com/in/abhilash-anilkumar-709bb228a" },
+  { name: "Imthiyaz Ahmed", role: "Events Head", img: image9, link: "https://www.linkedin.com/in/imthiyaz-ahmed-32254b304" },
+  { name: "Lakshmi Raman", role: "Editorial Head", img: image10, link: "https://www.linkedin.com/in/lakshmi-raman-469a5b28a/" },
+  { name: "Kaavyashree S", role: "Global Communications Head", img: image11, link: "https://www.linkedin.com/in/kaavyashree-sathiyanarayanan-360032287" },
+  { name: "Arpit Wibhute", role: "Finance Head", img: image12, link: "https://www.linkedin.com/in/arpit-wibhute-06594b28a/" },
+  { name: "Abhishek Nair", role: "Design Head", img: image13, link: "https://www.linkedin.com/in/abhishek-nair-n-a7954a304/" },
+  { name: "Kathakali Mishra", role: "ESC Liaison", img: image14, link: "https://www.linkedin.com/in/kathakali-mishra-a30b2828a]" },
 ];
 
 const Features = () => {

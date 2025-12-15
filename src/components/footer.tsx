@@ -1,5 +1,4 @@
 import React from 'react';
-import DiagonalLinesComponent from "./diagonalLine"; // Assuming this is your divider
 import { GoMail } from "react-icons/go";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { LiaInstagram, LiaMedium } from "react-icons/lia";
@@ -49,7 +48,6 @@ const Footer = () => {
       
       {/* The Divider */}
       <div className="mb-8 md:mb-12 opacity-80">
-        <DiagonalLinesComponent />
       </div>
 
       {/* The Social Grid */}

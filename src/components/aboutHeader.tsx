@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 // 1. Import hooks
 import { motion, Variants, useScroll, useMotionValueEvent } from 'framer-motion'; 
 import logo from '../assets/header.png';

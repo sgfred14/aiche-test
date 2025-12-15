@@ -14,8 +14,7 @@ const items = [
 
 const Achievements = () => {
 return (
-    <div className="w-full flex flex-col items-center justify-center ma py-8">
-        <h1 className="heading-text lg:text-6xl text-4xl text-center mb-8">Our Achievements</h1>
+    <div className="w-full flex flex-col items-center justify-center ma">
         <div className="options-text text-center mb-12">
         <AnimatedList className="backdrop-blur-[24px] backdrop-saturate-[100%] bg-[hsla(0,100%,50%,0)] rounded-[12px] border border-[rgba(255,255,255,0.5)]" items={items}  displayScrollbar={false} showGradients={true} enableArrowNavigation ={false}/>
         </div>
@@ -26,3 +25,4 @@ return (
     };
 
 export default Achievements;
+

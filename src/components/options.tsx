@@ -43,7 +43,7 @@ const Options = () => {
         </h2>
         <div className="h-1 w-24 bg-black mb-4"></div>
         <p className="font-mono text-sm tracking-widest opacity-60">
-          /// SELECT_SECTOR_TO_INITIALIZE
+          /// SELECT_WING_TO_INITIALIZE
         </p>
       </div>
 
@@ -109,7 +109,7 @@ const Options = () => {
 
                     {/* View Button */}
                     <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
-                      <span>Explore Sector</span>
+                      <span>Explore</span>
                       <span className="text-xl">→</span>
                     </div>
                   </motion.div>
