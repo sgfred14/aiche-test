@@ -31,8 +31,8 @@ const NAV_ITEMS = [
     path: '/events',
     label: 'Events',
     component: <Food />,
-    bgColor: '#c94141',
-    activeColor: '#c94141',
+    bgColor: '#8e1a1a',
+    activeColor: '#8e1a1a',
     delay: 0,
   },
   {
@@ -40,8 +40,8 @@ const NAV_ITEMS = [
     path: '/insider',
     label: 'Insider',
     component: <Retail />,
-    bgColor: '#91191a',
-    activeColor: '#91191a',
+    bgColor: '#7a1410',
+    activeColor: '#7a1410',
     delay: 0.3,
   },
   {
@@ -49,8 +49,8 @@ const NAV_ITEMS = [
     path: '/board',
     label: 'Board',
     component: <Community />,
-    bgColor: '#7a1410',
-    activeColor: '#7a1410',
+    bgColor: '#551d1c',
+    activeColor: '#551d1c',
     delay: 0.6,
   },
 ];

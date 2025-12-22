@@ -10,7 +10,7 @@ function Community() {
         document.title = 'Team';
     }, []);
     return (
-        <div className='flex flex-col w-full bg-[#7a1410] px-8 py-8 lg:px-14 lg:py-14'>
+        <div className='flex flex-col w-full bg-[#551d1c] px-8 py-8 lg:px-14 lg:py-14'>
             <Boardheader details="" title="The Team" />
             <Features />
             <Footer />

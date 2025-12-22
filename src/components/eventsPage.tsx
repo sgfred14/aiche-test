@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
-
+import MagneticLine from './MagnetLines';
 interface EventItem {
   id: string;
   title: string;
@@ -142,8 +142,8 @@ const GravitasEventsGallery = () => {
   return (
     // Ensure min-h-screen and a visible background color
     <section className="min-h-screen w-full bg-== px-6 py-24 selection:bg-white selection:text-black">
-      <div className="mx-auto max-w-7xl">
-        
+      <MagneticLine/>
+      <div className="mx-auto max-w-7xl">     
         <motion.div
           // CHANGED: Trigger immediately, removed 'whileInView' to prevent hidden content bugs
           initial={{ opacity: 0, y: 20 }}

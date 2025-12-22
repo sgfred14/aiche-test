@@ -16,7 +16,7 @@ const sectors = [
   {
     id: 'cube',
     title: 'Chem-E-Cube',
-    subtitle: 'SCALING // INDUSTRIAL',
+    subtitle: 'OPTIMIZE // INTENSIFY',
     description: "A place where ideation meets practicality. We investigate major industrial problems and find innovative, novel solutions by scaling them down to a precision-engineered 1ft³ cube.",
     img: image2,
   },
@@ -106,12 +106,6 @@ const Options = () => {
                     <p className="max-w-md text-sm md:text-base font-mono leading-relaxed opacity-90 options-text bg-black/50 p-4 border-l-2 border-[#E6D5B8]">
                       {sector.description}
                     </p>
-
-                    {/* View Button */}
-                    <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
-                      <span>Explore</span>
-                      <span className="text-xl">→</span>
-                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

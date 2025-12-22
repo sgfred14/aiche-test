@@ -8,7 +8,7 @@ interface CommunityHeaderProps {
     title: string;
 }
 
-const boardHeader = ({ details, title }: CommunityHeaderProps) => {
+const BoardHeader = ({ details, title }: CommunityHeaderProps) => {
     const handleClick = (url: string) => {
         window.location.href = url;
     };
@@ -78,4 +78,4 @@ const boardHeader = ({ details, title }: CommunityHeaderProps) => {
     )
 }
 
-export default boardHeader
+export default BoardHeader

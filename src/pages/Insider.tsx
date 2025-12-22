@@ -11,7 +11,7 @@ function Retail() {
         document.title = 'Insider'; // Change the title for About page
       }, []);
     return (
-        <div className='flex flex-col w-full bg-[#91191a] px-8 py-8 lg:px-14 lg:py-14'>
+        <div className='flex flex-col w-full bg-[#7a1410] px-8 py-8 lg:px-14 lg:py-14'>
             <Insider hours=" " schedule=" " title="The Insider" bgHover='hover:bg-[rgb(200,60,60)]'/>
             <FoodBestSection image1={tube} image2={tube} title="The Best of AIChE" subtitle="Showcasing the finest achievements" />
             <TestimonialWall />

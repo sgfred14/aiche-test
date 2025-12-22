@@ -8,16 +8,13 @@ const AboutEvents = () => {
 
     return (
         <div className="mt-12 md:mt-16 flex flex-col w-full mb-16">
-            
-            {/* HEADER AREA (Same as before) */}
+
             <div className="flex flex-col items-center justify-center mb-8">
                 <h1 className="lg:text-8xl text-6xl text-center tracking-tighter heading-text uppercase">
                     Events<br />Coming Up
                 </h1>
             </div>
             <TickerTape text="REGISTRATIONS OPEN // AIChE VIT // INNOVATION FOR FUTURE" direction="left" />
-
-            {/* EVENTS GRID (Same as before) */}
             <div className="w-full flex flex-col md:flex-row border-b-2 border-black">
                 <div className="group flex-1 flex flex-col items-center justify-center py-12 px-4 border-b-2 md:border-b-0 md:border-r-2 border-black transition-colors duration-300 hover:bg-black hover:text-[#E6D5B8] cursor-crosshair">
                     <span className="font-mono text-xs mb-2 opacity-60">09/21</span>
@@ -36,7 +33,7 @@ const AboutEvents = () => {
             {/* BUTTON BAR (Same as before) */}
             <div className="w-full flex justify-center py-12 border-b-2 border-black border-dashed bg-[#E6D5B8]">
                 <button 
-                    onClick={() => handleClick("https://gravitas.vit.ac.in")} 
+                    onClick={() => handleClick("./events")} 
                     className="relative px-12 py-4 border-2 border-black bg-white text-xl font-bold uppercase tracking-widest transition-all duration-200 hover:bg-black hover:text-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                 >
                     View All Archives

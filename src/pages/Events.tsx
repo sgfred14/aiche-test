@@ -9,12 +9,12 @@ function Food() {
     }, []);
 
     return (
-        <div className="relative w-full min-h-screen bg-[#c94141] text-black overflow-x-hidden selection:bg-black selection:text-[#c94141]">
+        <div className="relative w-full min-h-screen bg-[#8e1a1a] text-black overflow-x-hidden selection:bg-black selection:text-[#c94141]">
         
                 <EventHeader 
-                    hours="Chemathon 6.0" 
-                    schedule="Sat - Mon: 11:00AM - 8:00PM" 
-                    title="Our Flagship Event" 
+                    hours="" 
+                    schedule="Our Flagship Event" 
+                    title="Chemathon 6.0" 
                     bgHover='hover:bg-black hover:text-[#c94141]' 
                 />
                     <GravitasEventGallery />

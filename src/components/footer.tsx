@@ -1,7 +1,6 @@
 import React from 'react';
-import { GoMail } from "react-icons/go";
 import { SlSocialLinkedin } from "react-icons/sl";
-import { LiaInstagram, LiaMedium } from "react-icons/lia";
+import { LiaInstagram, LiaMedium, LiaYoutube } from "react-icons/lia";
 
 // Define the shape of a footer link
 interface FooterLink {
@@ -13,15 +12,14 @@ interface FooterLink {
 
 const Footer = () => {
   const openUrl = (url: string) => window.open(url, "_blank");
-  const sendMail = (email: string) => (window.location.href = `mailto:${email}`);
 
   // Data configuration for easy management
   const links: FooterLink[] = [
     {
       id: 'email',
-      icon: <GoMail className="text-3xl md:text-4xl" />,
-      label: "Email Us",
-      action: () => sendMail("aichevit@gmail.com"),
+      icon: <LiaYoutube className="text-3xl md:text-4xl" />,
+      label: "Youtube",
+      action: () => openUrl("https://www.youtube.com/aiche-vit"),
     },
     {
       id: 'linkedin',
