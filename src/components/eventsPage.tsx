@@ -14,7 +14,7 @@ interface EventItem {
 const events: EventItem[] = [
   {
     id: 'bbc',
-    title: 'Build Bid Curate',
+    title: 'Bid Build Curate',
     description: 'Mystery met Mastery. Teams clashed in high voltage auctions, then raced the clock to craft brilliance from chaos.',
     color: 'text-emerald-400',
     dotColor: 'bg-emerald-400',

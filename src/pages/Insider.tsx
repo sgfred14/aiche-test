@@ -4,7 +4,7 @@ import FoodBestSection from "../components/banner";
 import Footer from "../components/footer";
 import tube from "../assets/tube.png"
 import TestimonialWall from "../components/testimonials";
-
+import Conferences from "../components/conferences";
 
 function Retail() {
     useEffect(() => {
@@ -15,6 +15,7 @@ function Retail() {
             <Insider hours=" " schedule=" " title="The Insider" bgHover='hover:bg-[rgb(200,60,60)]'/>
             <FoodBestSection image1={tube} image2={tube} title="The Best of AIChE" subtitle="Showcasing the finest achievements" />
             <TestimonialWall />
+            <Conferences />
             <Footer />
         </div>
         

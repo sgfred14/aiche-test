@@ -19,14 +19,14 @@ const teamMembers = [
   { name: "Shyla Gupta", role: "Secretary", img: image, link: "https://www.linkedin.com/in/shyla-gupta-a16371304" },
   { name: "Samayak Nitesh Chajjed", role: "Co-Secretary, Management Head", img: image4, link: "https://www.linkedin.com/in/samyakchhajed" },
   { name: "Arpit Wibhute", role: "Finance Head", img: image12, link: "https://www.linkedin.com/in/arpit-wibhute-06594b28a/" },
-  { name: "Abhilash", role: "Podcast and Webmaster Head", img: image8, link: "https://www.linkedin.com/in/abhilash-anilkumar-709bb228a" },
+  { name: "Abhilash", role: "Podcast Head and Webmaster", img: image8, link: "https://www.linkedin.com/in/abhilash-anilkumar-709bb228a" },
   { name: "Abhishek Nair", role: "Design Head", img: image13, link: "https://www.linkedin.com/in/abhishek-nair-n-a7954a304/" },
-    { name: "Kathakali Mishra", role: "ESC Liaison", img: image14, link: "https://www.linkedin.com/in/kathakali-mishra-a30b2828a]" },
+  { name: "Lakshmi Raman", role: "Editorial Head", img: image10, link: "https://www.linkedin.com/in/lakshmi-raman-469a5b28a/" },  
   { name: "Kailash V", role: "ChemECar & Technical Head", img: image5, link: "#kailash" },
   { name: "Sharma AK", role: "ChemECube & R&D Head", img: image6, link: "https://www.linkedin.com/in/sharma-a-k-b3597428a" },
   { name: "Aadya Saxena", role: "K12 & Outreach Head", img: image7, link: "https://www.linkedin.com/in/aadya-saxena-750574281" },  
+  { name: "Kathakali Mishra", role: "ESC Liaison", img: image14, link: "https://www.linkedin.com/in/kathakali-mishra-a30b2828a]" },
   { name: "Imthiyaz Ahmed", role: "Events Head", img: image9, link: "https://www.linkedin.com/in/imthiyaz-ahmed-32254b304" },
-  { name: "Lakshmi Raman", role: "Editorial Head", img: image10, link: "https://www.linkedin.com/in/lakshmi-raman-469a5b28a/" },
   { name: "Kaavyashree S", role: "Global Communications Head", img: image11, link: "https://www.linkedin.com/in/kaavyashree-sathiyanarayanan-360032287" },
 
 ];
