@@ -136,7 +136,7 @@ const AboutEvents = () => {
                     className="border-2 border-black border-dashed h-80 md:h-[500px] cursor-pointer relative overflow-hidden group bg-black"
                 >
                     <img 
-                        className="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" 
+                        className="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 group-hover:scale-100" 
                         src={img} 
                         alt="Insider Access" 
                     />

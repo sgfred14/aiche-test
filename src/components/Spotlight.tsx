@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, useMotionValue, useTransform, useAnimation, PanInfo, AnimatePresence } from 'framer-motion';
 import { RotateCcw, Layers } from 'lucide-react';
 import img1 from '../assets/spotlight/alumni.jpg';
@@ -35,6 +35,7 @@ const Card = ({
     const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
         const threshold = 150;
         if (Math.abs(info.offset.x) > threshold) {
+            console.log(event);
             controls.start({ 
                 x: info.offset.x > 0 ? 500 : -500,
                 opacity: 0,
