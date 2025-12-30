@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import EventHeader from "../components/EventHeader_temp";
 import Footer from "../components/footer";
 import GravitasEventGallery from "../components/eventsPage";
-import MediumSection from "../components/Blogs";
+//import MediumSection from "../components/Blogs";
 import Spotlight from "../components/Spotlight";
 function Events() {
     useEffect(() => {
