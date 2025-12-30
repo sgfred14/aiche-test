@@ -19,7 +19,7 @@ function Events() {
 
                 />
                     <GravitasEventGallery />
-                <MediumSection username="@aichevit" />
+                {/*<MediumSection username="@aichevit" />*/}
                 <Footer />
         </div>
 
