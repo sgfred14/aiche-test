@@ -21,13 +21,13 @@ const CONTENT: { events: ContentItem[]; podcasts: ContentItem[]; blogs: ContentI
             title: "Podcast Mania", 
             date: "WATCH NOW", 
             type: "PODCAST", 
-            link: "https://www.youtube.com/watch?v=wf3UbHto7kQ" // Add your link here
+            link: "https://www.youtube.com/watch?v=wf3UbHto7kQ&list=PLcRDViqfG1-DOyQW9HTr7w5Ms-5PjMRHi" // Add your link here
         },
         { 
-            title: "Scale Up Secrets", 
+            title: "Chemically Doped", 
             date: "WATCH NOW", 
             type: "PODCAST", 
-            link: "https://www.youtube.com/watch?v=RFYOd6zjR6Q" // Add your link here
+            link: "https://www.youtube.com/watch?v=RFYOd6zjR6Q&list=PLcRDViqfG1-Cv8FrA7P4ZQW7FKdhGoyGl" // Add your link here
         }
     ],
     blogs: [
