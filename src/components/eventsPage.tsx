@@ -22,7 +22,7 @@ const events: EventItem[] = [
     dotColor: 'bg-emerald-400',
     gradient: 'from-emerald-500/20 to-emerald-900/5',
     colSpan: 'md:col-span-1',
-    type: 'GRAVITAS',
+    type: `GRAVITAS'24`,
   },
   {
     id: 'ae',
@@ -32,7 +32,7 @@ const events: EventItem[] = [
     dotColor: 'bg-amber-400',
     gradient: 'from-amber-500/20 to-amber-900/5',
     colSpan: 'md:col-span-1',
-    type: 'GRAVITAS',
+    type: `GRAVITAS'24`,
   },
   {
     id: 'otr',
@@ -42,7 +42,7 @@ const events: EventItem[] = [
     dotColor: 'bg-cyan-400',
     gradient: 'from-cyan-500/20 to-cyan-900/5',
     colSpan: 'md:col-span-1',
-    type: 'GRAVITAS',
+    type: `GRAVITAS'24`,
   },
   {
     id: 'astro',
@@ -52,7 +52,7 @@ const events: EventItem[] = [
     dotColor: 'bg-rose-500',
     gradient: 'from-rose-500/20 to-rose-900/5',
     colSpan: 'md:col-span-2',
-    type: 'GRAVITAS',
+    type: `GRAVITAS'24`,
   },  
   {
     id: 'yantra',
@@ -62,7 +62,7 @@ const events: EventItem[] = [
     dotColor: 'bg-purple-500',
     gradient: 'from-purple-500/20 to-purple-900/5',
     colSpan: 'md:col-span-3',
-    type: 'YANTRA',
+    type: `YANTRA'25`,
   },
 ];
 
